@@ -1,0 +1,5 @@
+\contentsline {section}{\tocsection {}{1}{Introduction}}{1}
+\contentsline {section}{\tocsection {}{2}{The Architectures}}{1}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Client-Server}}{1}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Peer-to-Peer}}{1}
+\contentsline {subsection}{\tocsubsection {}{2.3}{Hybrid Peer-to-Peer}}{1}
