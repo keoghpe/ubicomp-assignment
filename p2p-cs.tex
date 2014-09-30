@@ -26,24 +26,42 @@ However, this flexibility comes at a price. Privacy is certainly an issue. While
 The client server model has brought with it challenges for law makers. If an Irish customer's data is stored in a server in the USA, what laws govern that data?
 Censorship is and freedom of expression are also at play here. The internet provides the public with the power to communicate and organise effectively. The ability to spread information effectively empowers people to overthrow oppressive regimes. However, centralised servers can be easily blocked by tactics such as DNS poisoning. An authoritarian governments control over servers allows it to effectively control it's population's minds.
 The Peer-to-peer architecture on the other hand ... Napster, Bittorrent, 
+P2P first emerged in the popular conscious in the form of Napster. P2P allows clients to connect to each other in a decentralised way.
+P2P has caused quite a stir in the past and continues to do so. It's most common use is file sharing, often illegally. The development of this technology has had a major impact on the entertainment industry. As a result they have lobbied continuously for it's regulation. 
+In the case of file sharing peer to peer provides a greater availability of popular material. The more popular a resource is the more likely a peer is to be sharing it. As a result it can be more robust for a client server model, in which, once the server goes down the client is unable to avail of it's resources. On the other hand, if a resource is unpopular it is unlikely that many peers will be seeding that resource at any point in time. In this case a client server architecture might be preferable.
+One obvious security flaw in P2P is that machines can be used to form a bot-net without the owner knowing. This bot-net can then be used to perform a Distributed Denial of Service Attack on a server.
+Both P2P and Client-Server are not restricted to being independent of one another. In fact, companies such as Spotify and Skype use a hybrid approach.
 
-
-Security
-NSA
-International
-Censorship
-Thin clients
-
+%https://en.wikipedia.org/wiki/Swarm_robotics
+%https://en.wikipedia.org/wiki/Bitcoin
+%http://en.wikipedia.org/wiki/Ubiquitous_computing
+%http://en.wikipedia.org/wiki/Peer-to-peer
 
 
 \section{The Architectures}
 \subsection{Client-Server}
 
-In the Client-Server Architecture users connect over a network to a single server. The clients exchange data with the server while the server provides the clients with services. TOP DOWN, CENTRALISED
+%	This is very much from the book - Computer networking, a top down approach and needs to be fleshed out with other sources.
+%	I also need to phrase all of this better in my own words
+In the Client-Server Architecture one always-on host known as a server services requests from other hosts known as clients. The clients exchange data with the server and the server provides the clients with services. The classic example of a client server architecture is in web applications. A client, usually a web browser sends a request to the server using the http protocol. The server then responds by sending a html page for the browser to render. In a client-server application clients do not directly communicate with eachother. The can however communicate with eachother via the server. For example, in the Facebook chat application a client can send a message to the server using AJAX which the server forwards to another client. To the user it appears the same as if the two clients were communicating directly. The server has a fixed IP address which is known by any client that wishes to connect to it.
+Increasing numbers of clients typically put more strain on a server. As one host needs to accomodate many requests it requires a robust infrastructure. A single host usually isn't enough to accomodate multiple requests. Large applications usuallly make use of a cluster of hosts known as a server farm.
+
 
 \subsection{Peer-to-Peer}
-DECENTRALISED, BOTTOM UP, COLLABORATIVE
+
+In the Peer-to-Peer (P2P) Architecture hosts communicate directly and intermittently. The hosts in a P2P architecure are known as peers and there is little or no reliance on an always on servers. P2P provides many opportunities applications that require collaboration, decentralisation or high network throughput. This has lead to it's use in many popular applications such as Bittorrent and Bitcoin. A P2P architecture is 'self-scalable'. While the addition of an extra peer increases the workload of the system by increasing request the peer also increases the ability to handle that workload by providing the service to other peers. Securing P2P applications can be difficult due to their open and distributed nature.
+P2P can be broken down further into two subcategories of architecture; Centralised and Decentralised P2P. In a Centralised P2P architecture a central server is used to maintain an index of users and content they share. 
+% BACK THIS UP AND MAKE SURE IT'S NOT BULLSHIT
+An example of this would be Bittorrent. If you were to hypothetically use bittorrent to download a resource you would need to obtain the details of the peers that host that resource. These details would come in the form of a '.torrent' file. A user needs to visit centralised server such as The Pirate Bay or Kick Ass Torrents in order to obtain this file.
+In a Decentralised P2P Architecture each peer acts as an indexed server. It also acts like a router by relaying queries between peers. An example of this would be Bitcoin. 
+%ELABORATE HERE 
+
+%%% Look at this: http://medianet.kent.edu/surveys/IAD06S-P2PArchitectures-chibuike/P2P%20App.%20Survey%20Paper.htm
 
 \subsection{Hybrid Peer-to-Peer}
+
+%%% FIGURE OUT HOW TO DISTINGUISH BETWEEN CENTRALISED AND HYBRID BETTER.
+
+%%%THOM YORKE AND BITTORRENT
 
 \end{document}
