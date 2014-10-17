@@ -1,0 +1,61 @@
+\begin{thebibliography}{1}
+
+\bibitem{Cisco}
+Cisco.
+\newblock Cisco visual networking index: Forecast and methodology, 2013–2018.
+\newblock
+  \url{http://www.cisco.com/c/en/us/solutions/collateral/service-provider/ip-ngn-ip-next-generation-network/white_paper_c11-481360.html}.
+\newblock Accessed: 15-10-2014.
+
+\bibitem{ClientServer}
+TechSoup.
+\newblock Client server.
+\newblock
+  \url{http://www.ictknowledgebase.org.uk/uploads/RTEmagicC_clientserver.gif.gif}.
+\newblock Accessed: 15-10-2014.
+
+\bibitem{PeerToPeer}
+TechSoup.
+\newblock Peer to peer networks.
+\newblock \url{http://www.ictknowledgebase.org.uk/peertopeernetworks}.
+\newblock Accessed: 15-10-2014.
+
+\bibitem{GnutellaCase}
+Matei Ripeanu.
+\newblock Mapping the gnutella network: Properties of large-scale peer-to-peer
+  systems and implications for system design.
+\newblock {\em Peer-to-Peer Computing, 2001. Proceedings. First International
+  Conference on}, pages 99 -- 100, August 2001.
+
+\bibitem{Bittorrent}
+Bram Cohen.
+\newblock The bittorrent protocol specification.
+\newblock \url{http://www.bittorrent.org/beps/bep_0003.html}.
+\newblock Accessed: 15-10-2014.
+
+\bibitem{BittorrentSpec}
+Various.
+\newblock The bittorrent protocol specification.
+\newblock \url{https://wiki.theory.org/BitTorrentSpecification}.
+\newblock Accessed: 15-10-2014.
+
+\bibitem{Miley}
+The~Pirate Bay.
+\newblock Miley cyrus, bangerz.
+\newblock
+  \url{http://thepiratebay.se/torrent/8996596/Miley_Cyrus_-_Bangerz_(Deluxe_Version)__2013-Album_}.
+\newblock Accessed: 15-10-2014.
+
+\bibitem{Everyware}
+The~Pirate Bay.
+\newblock Everyware, the dawning age of ubiquitous computing.
+\newblock
+  \url{http://thepiratebay.se/torrent/4506989/Everyware__The_Dawning_Age_of_Ubiquitous_Computing}.
+\newblock Accessed: 15-10-2014.
+
+\bibitem{FreeRiding}
+Daniel Hughes, Geoff Coulson, and James Walkerdine.
+\newblock Free riding on gnutella revisited: The bell tolls?
+\newblock {\em IEEE DISTRIBUTED SYSTEMS ONLINE}, June 2005.
+
+\end{thebibliography}
