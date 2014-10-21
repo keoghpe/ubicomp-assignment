@@ -1,4 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{Weiser}
+Mark Weiser.
+\newblock The computer for the 21st century.
+\newblock {\em Parallel Processing (ICPP), 2013 42nd International Conference
+  on}, October 2013.
 
 \bibitem{Cisco}
 Cisco.
@@ -39,6 +45,10 @@ Various.
 \newblock \url{https://wiki.theory.org/BitTorrentSpecification}.
 \newblock Accessed: 15-10-2014.
 
+\bibitem{DistSys}
+George Coulouris, Jean Dollimore, Tim Kindberg, and Gordon Blair.
+\newblock Distributed systems, concepts and design, fifth edition.
+
 \bibitem{Miley}
 The~Pirate Bay.
 \newblock Miley cyrus, bangerz.
@@ -53,9 +63,43 @@ The~Pirate Bay.
   \url{http://thepiratebay.se/torrent/4506989/Everyware__The_Dawning_Age_of_Ubiquitous_Computing}.
 \newblock Accessed: 15-10-2014.
 
+\bibitem{PirateBayBrowser}
+TorrentFreak.com.
+\newblock How the pirate bay plans to beat censorship for good.
+\newblock
+  \url{ttps://torrentfreak.com/how-the-pirate-bay-plans-to-beat-censorship-for-good-140105/}.
+\newblock Accessed: 18-10-2014.
+
+\bibitem{FreeWeb}
+Haiying Shen, Alex~X. Liu, and Lianyu Zhao1.
+\newblock Freeweb: P2p-assisted collaborative censorship-resistant web
+  browsing.
+\newblock {\em Parallel Processing (ICPP), 2013 42nd International Conference
+  on}, October 2013.
+
 \bibitem{FreeRiding}
 Daniel Hughes, Geoff Coulson, and James Walkerdine.
 \newblock Free riding on gnutella revisited: The bell tolls?
 \newblock {\em IEEE DISTRIBUTED SYSTEMS ONLINE}, June 2005.
+
+\bibitem{DesignSpace}
+KAY RÖMER and FRIEDEMANN MATTERN.
+\newblock The design space of wireless sensor networks.
+\newblock {\em Wireless Communications, IEEE (Volume:11 , Issue: 6 )}, December
+  2004.
+
+\bibitem{TinyTorrents}
+Ciaran~Mc Goldrick, Michael Clear, Ricardo~Simon Carbajo, Karsten Fritsche, and
+  Meriel Huggard.
+\newblock Tinytorrents - integrating peer-to-peer and wireless sensor networks.
+\newblock {\em Wireless On-Demand Network Systems and Services, 2009. WONS
+  2009. Sixth International Conference on}, February 2009.
+
+\bibitem{EMD}
+Shibo He, Xu~Li, Jiming Chen, Peng Cheng, Youxian Sun, and David Simplot-Ryl.
+\newblock Emd: Energy-efficient p2p message dissemination in delay-tolerant
+  wireless sensor and actor networks.
+\newblock {\em IEEE JOURNAL ON SELECTED AREAS IN COMMUNICATIONS/SUPPLEMENT,
+  VOL. 31, NO. 9}, SEPTEMBER 2013.
 
 \end{thebibliography}
