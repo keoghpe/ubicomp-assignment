@@ -25,56 +25,49 @@ Peter Keogh
 
 \section{Introduction}
 
-Ubiquitous Computing can be defined as computation, communication and sensing being integrated with the physical world. First described in the paper by Mark Weiser ``The Computer in the 21st Century'', it is a paradigm where computers would ``disappear. They (would) weave themselves into the fabric of everyday life until they are indistinguishable from it.''\cite{Weiser} The pervasiveness of computers is the defining characteristic of Ubicomp, as a result it's applications touch on and integrate a broad range of topics within computer science and electronic engineering. Ubicomp has the potential be utilised in any and every industry or part of life. 
+Ubiquitous Computing can be defined as computation, communication and sensing being integrated with the physical world. First described in the paper by Mark Weiser ``The Computer in the 21st Century'', it is a paradigm where computers would ``disappear. They (would) weave themselves into the fabric of everyday life until they are indistinguishable from it.''\cite{Weiser} The pervasiveness of computers is the defining characteristic of Ubicomp, as a result it's applications touch on and integrate a broad range of topics within computer science and electronic engineering. Ubicomp has the potential be utilised in potentially any industry or part of life. 
 \paragraph{}
 
-The choice of network architecture in the design of a ubiquitous computing system is crucial to the success of the system. The number of devices owned by a single user and has increased the amount of data produced and exchanged by systems. This has brought with it an increased load on networks exchanging this data. As ubicomp systems become more and more common this load is set to increase. Therefore determining how data will be exchanged and stored in a systems architecture is crucial to the success of Ubicomp. 
+The choice of network architecture in the design of a ubiquitous computing system is crucial to the success of the system. The growing number of devices owned by a single user and has increased the amount of data produced and exchanged by systems. This has brought with it an increased load on networks exchanging this data. As ubicomp systems become more and more common this load is set to increase. Therefore determining how data will be exchanged and stored in a systems architecture is a critical factor for the success of ubiquitous computing system. 
 \paragraph{}
 
-With such a broad range of devices and potential applications it is impossible to truly say that one network architecture is better than another. Client-Server networking and Peer-to-Peer networking both have their strengths and weaknesses. We cannot look at one and say that it is better that the other. We can however look at them and determine which is better for a particular application. This paper will present information that will hopefully help guide the decision making process when developing an application.
-
+With such a broad range of devices and potential applications it is impossible to truly say that one network architecture is better than another. Client-Server networking and Peer-to-Peer networking both have their strengths and weaknesses. We cannot look at one and say that it is better that the other; we can only look at them and determine which is better for a particular application. This paper will present information that will hopefully help guide the decision making process when developing an application.
 \paragraph{}
-The growth of the internet has seen the emergence of two typical network architectures in many applications. These architectures are the Client-Server model and the Peer-to-Peer model. 
-\paragraph{}
-The popularity of these architectures can be easily seen when we look at their respective shares of network traffic. Although in recent years video over IP has come to dominate internet traffic we can still get a sense of the popularity of these architectures.  
-Fixed web and data, mostly client-server services currently account for 5,625 Petabytes of data transfer a month. Similarly P2P file transfer consumes 5,254 Petabyes of data worldwide per month.\cite{Cisco}
+The popularity of these architectures can be easily seen when we look at their respective shares of network traffic.  
+Fixed web and data, mostly client-server services currently account for 5,625 Petabytes of data transfer a month. Similarly P2P file transfer consumes 5,254 Petabyes of data worldwide per month.\cite{Cisco} In previous years the share would have been far greater; the decline in the use of bit torrent clients and the growth in both mobile web and video over IP have changed the landscape somewhat.
 
-Both P2P and Client-Server are not restricted to being independent of one another. In fact, companies such as Spotify and Skype use a hybrid approach.
-%I believe we will see a further blurring of the lines between client server and p2p.
+P2P and Client-Server are not restricted to being independent of one another. In fact, companies such as Spotify and Skype use a hybrid approach. The advantages of hybrid architectures should be evident in the description of the architectures later. The view taken in this paper is that neither is better than the other; the suitability of the architecture depends on the application. Many ubicomp applications will benefit from a mix of both architectures.
 
 \section{The Architectures}
 
-\includegraphics[scale=.5]{Architectures}
+\includegraphics[scale=.5]{Architectures}\cite{DistSys}
 
 \subsection{Client-Server}
 
 \paragraph{}
-Many of the most successful technology businesses are based on the Client-Server model today, most obviously in Cloud Computing. Gmail, Facebook and Dropbox are all examples of applications built on the client-server architecture. It is an appealing architecture for these businesses as they can store and access customer information. The advent of faster and more reliable internet access in many parts of the world and the growth in the number of connected devices users have also contributed to the growing popularity of this architecture. 
+Many successful technology businesses are based on the Client-Server model, most obviously in Cloud Computing. Gmail, Facebook and Dropbox are all examples of applications built on the client-server architecture. It is an appealing architecture for these businesses as they can store and access customer information easily. The advent of faster and more reliable internet access in many parts of the world and the growth in the number of connected devices owned by a single user has also contributed to the growing popularity of this architecture. 
 \paragraph{}
-People want to be able to access their resources on all of their devices. Client-server architectures make this possible. In years gone by users would have to back all their work up on a CD or floppy disk. They would forget to do so at their peril. Now one can work on a project locally and easily save it to a remote server to back it up. 
+Users want to be able to access their resources on all of their devices. Client-server architectures make this possible. In years gone by users would have to back all their work up on a CD or floppy disk. They would forget to do so at their peril. Now a user can work on a project locally and easily save it to a remote server to back it up.
 \paragraph{}
 Using cloud services is appealing to users as it can allow the user to spend less money on their devices. ``Thin'' clients like Google's Chrome book have come to fill a new gap in the market. As services such as Google Docs provide a cloud alternative to Microsoft Word the processing and storage requirements of a laptop can be minimised.
-
-%	This is very much from the book - Computer networking, a top down approach and needs to be fleshed out with other sources.
-%	I also need to phrase all of this better in my own words
 \paragraph{}
-In the Client-Server Architecture one always-on host known as a server services requests from other hosts known as clients. The clients exchange data with the server and the server provides the clients with services. 
+In the Client-Server Architecture a server services requests from clients. The server is always on in order to service the client's requests. The client passes data to the server which the server can store or perform some computation with, returning the result to the client.
 \paragraph{}
-The classic example of a client server architecture is in web applications. A client, usually a web browser sends a request to the server using the http protocol. The server then responds by sending a html page for the browser to render. In a client-server application clients do not directly communicate with each other. They can communicate with each other via the server. For example, in the Facebook chat application a client can send a message to the server using AJAX which the server forwards to another client. To the user it appears the same as if the two clients were communicating directly. The server has a fixed IP address which is known or can be discovered by any client that wishes to connect to it.
+The client server architecture is typically used in web applications. In a web application a client, usually a web browser, sends a request to a server using the http protocol. The server then responds by sending a html page for the browser to render. In a client-server application clients do not directly communicate with each other. They can communicate with each other via the server. For example, in the Facebook chat application a client can send a message to the server using AJAX which the server forwards to another client. To the user it appears the same as if the two clients were communicating directly. The server has a fixed IP address which is known or can be discovered by any client that wishes to connect to it.
 \paragraph{}
 Increasing numbers of clients typically put more strain on a server. As one host needs to accommodate many requests it requires a robust infrastructure. Usually a single host isn't enough and more complex distributed application architectures need to be developed. These architectures typically make use of server farms; large warehouses filled with servers that are capable of communicating.
 
 \subsection{Peer-to-Peer}
 \paragraph{}
-P2P first emerged in the popular conscious in the form of Napster. It has caused quite a stir in the past and continues to do so. It's most common use is file sharing, often illegally. It's use in this manner has had a major impact on the entertainment industry and as a result they have lobbied continuously for it's regulation.
+P2P first emerged in the popular consciousness in the form of Napster. It has caused quite a stir in the past and continues to do so. It's most common use is file sharing, often illegally. It's use in this manner has had a major impact on the entertainment industry and as a result they have lobbied continuously for it's regulation.
 \paragraph{}
  P2P offers advantages over the client server model. In the case of file sharing P2P provides a greater availability of popular material. The more popular a resource is the more likely a peer is to be sharing it. As a result it can be more robust than a client server model, in which, once the server goes down the client is unable to avail of it's resources. On the other hand, if a resource is unpopular it is unlikely that many peers will be seeding that resource at any point in time. In this case a client server architecture might be preferable.
 \paragraph{}
-In the Peer-to-Peer (P2P) Architecture nodes communicate directly and intermittently. The hosts in a P2P architecture are known as peers. Reliance on always on servers tends to depend on the ``purity'' of the P2P application. An application with no reliance on servers could be said to be ``pure'' P2P. P2P provides many opportunities the development of applications that require collaboration, decentralisation or high network throughput. This has lead to it's use in popular applications such as BitTorrent and BitCoin.
+In the Peer-to-Peer devices communicate directly and intermittently. The devices in a P2P architecture are known as peers. P2P application that require a server are considered less ``pure'' than those who don't. An application with no reliance on servers could be said to be ``pure'' P2P. P2P provides many interesting development opportunities; for example, in applications that require collaboration, decentralisation or high network throughput. This has lead to it's use in popular applications such as BitTorrent and BitCoin.
 \paragraph{}
-A P2P architecture is 'self-scalable'. While the addition of an extra peer increases the workload of the system by increasing the number of requests the peer also increases the ability to handle that workload by providing the service to other peers. Securing P2P applications can be difficult due to their open and distributed nature.
+A P2P architecture is `self-scalable'. While the addition of an extra peer increases the workload of the system by increasing the number of requests the additional peer also increases the ability to handle that workload by providing the service to other peers. Securing P2P applications can be difficult due to their open and distributed nature.
 \paragraph{}
-P2P can be broken down further into three subcategories of architecture; centralised, decentralised and hybrid P2P.
+P2P can be broken down further into four subcategories of architecture; centralised, decentralised, hybrid P2P and DHT based.
 \paragraph{}
 An example of centralised P2P would be BitTorrent. In order to communicate with peers in the network a client must obtain information about the peers from a centralised server known as a tracker. Information about a tracker is obtained from a metadata file. A user needs to visit centralised server such as The Pirate Bay or Kick Ass Torrents in order to obtain this file. This dependence on a centralised server to track the network is what defines BitTorrent as centralised P2P.
 \paragraph{}
@@ -84,7 +77,7 @@ In hybrid P2P hosts with a good internet connection act as routers for other pee
 
 %ELABORATE HERE 
 \paragraph{}
-Peer-to-peer systems are most effective at storing large amounts of immutable data. They perform less well at storing mutable data.\cite{DistSys}
+Peer-to-peer systems are most effective at storing large amounts of immutable data. They perform less well at storing mutable data.
 %%% from distributed computing book
 
 %%% Look at this: http://medianet.kent.edu/surveys/IAD06S-P2PArchitectures-chibuike/P2P%20App.%20Survey%20Paper.htm
@@ -96,21 +89,20 @@ A protocol is an agreed method of communicating between applications. The protoc
 \paragraph{}
 The client-server architecture is the typical architecture used in web applications. The protocol used for transferring information between the client and server is the HTTP protocol. HTTP (HyperText Transfer Protocol) follows a request response cycle. The client makes requests to the server and the server responds to the request. The server doesn't send any information to the client if not prompted by a request. This has implications for applications using the protocol. 
 \paragraph{}
-If nodes wish to collaborate with each other or obtain realtime information about other nodes in the system they must ``poll'' the server by repeatedly sending requests to the sever. This is very inefficient as it results in significant network overhead and results in the server processing requests even when the state of the system remains unchanged. A solution for this problem has recently emerge the the standard of web sockets which allows servers and web browsers to set up a dedicated end to end bidirectional connection.
+If nodes wish to collaborate with each other or obtain realtime information about other nodes in the system they must ``poll'' the server by repeatedly sending requests to the sever. This is very inefficient as it results in significant network overhead and results in the server processing requests even when the state of the system remains unchanged. A solution for this problem has recently emerged the the standard of web sockets which allows servers and web browsers to set up a dedicated end to end bidirectional connection.
 \paragraph{}
 \includegraphics[scale=.7]{http_diagram}\cite{http://probablycopyrighted.com/wp-content/uploads/http_diagram.png}
 
 \subsection{Gnutella 0.4}\cite{GnutellaCase}
 \paragraph{}
 Gnutella was the first large scale decentralised P2P network of it's kind. It ``builds at the application layer a virtual routing mechanism.''\cite{GnutellaCase} Early versions of Gnutella were truly decentralised P2P networks. No centralised servers were needed to facilitate the transfer of files from node to node.
-One of the implications of not using centralised servers in a p2p application is the challenge of keeping track of network nodes and what resources are available in the network. In order to obtain this information ``network flooding'' was used. Peers all maintain at least one TCP connection to other nodes in the system. The network flooding algorithm ``floods'' the network with requests; each node sends messages on to all of it's neighbours except the one it received the message from. 
+One of the implications of not using centralised servers in a P2P application is the challenge of keeping track of network nodes and what resources are available in the network. In order to obtain this information ``network flooding'' was used. Peers all maintain at least one TCP connection to other nodes in the system. The network flooding algorithm ``floods'' the network with requests; each node sends messages on to all of it's neighbours except the one it received the message from. 
 \paragraph{}
 \includegraphics[scale=.9]{file-sharing1}\cite{http://static.howstuffworks.com/gif/file-sharing1.gif}
 
 \subsection{Gnutella 0.6}\cite{GnutellaCase}
 \paragraph{}
 The flooding model used in Gnutella 0.4 had scalability problems. Searches were costly and usually terminated prematurely. Gnutella moved from a ``pure'' P2P paradigm to a hybrid approach. This new approach makes use of ultra peers and leaf nodes to create a hierarchically structured network. An ultra peer is a node that has a faster connection and elects to route more traffic for the network. The ultra peers also act as proxies for the leaf nodes. Searches become more efficient since searches only need to flood the ultra nodes instead of the whole network.
-
 
 \subsection{Bittorrent Protocol}\cite{Bittorrent} \cite{BittorrentSpec}
 \paragraph{}
@@ -135,10 +127,10 @@ Systems that are built with the Client-Server architecture and P2P systems are b
 
 \paragraph{}
 
-Availability in client-server systems is dependent on the server architecture and network connection. If a firewall is preventing a user from accessing a server then to that user the server is unavailable.
+Availability in client-server systems is dependent on the server architecture and network connection. If a firewall prevents a user from accessing a server then to that user the server is unavailable.
 
 \paragraph{}
-A single server may be enough to handle requests for a service with few customers making infrequent requests. In the case of a sever simply providing static information for clients a single server can usually handle all the requests that are made of it. However, more popular and complicated services that require more processing and data throughput need more complicated server architectures.
+A single server may be enough to handle requests for a service with few customers making infrequent requests. In the case of a sever simply providing static information for clients, a single server can usually handle all the requests that are made of it. However, more popular and complicated services that require more processing and data throughput need more complicated server architectures.
 
 \paragraph{}
  A service that works internationally can reduce the network latency of requests in certain regions by having the same service running on multiple servers in locations that are closer to their customers. This reduces the load on a single server and has the added advantage that we can partition customer's data to be located closer to them.
@@ -154,20 +146,10 @@ All of the techniques for improving availability, fault tolerance and scalabilit
 Availability in P2P systems is a function of the number of system nodes and the popularity of the resource to be accessed. If a node wishes to request a resource that is popular in a network with a large number of nodes then it should have no problem getting it. It is likely that there will be nodes geographically nearby that are hosting the information and are currently available for processing. This would result in reduced network latency and a faster download of the resource.
 
 \paragraph{}
-For example, if a BitTorrent user wanted to download Miley Cyrus's ``Bangerz'' album they would find 1143 peers hosting that file according to The Pirate Bay. That resource would be highly available in the P2P system.\cite{Miley}
+One problem in P2P networks is the availability of unpopular resources. Niche resources like academic journals are better hosted on a server. On the other hand popular resources are highly available; their availability increases in proportion to their popularity.
 
 \paragraph{}
-If on the other hand a user wanted to read ``Everyware, The Dawning Age of Ubiquitous Computing'' they would find just 3 peers hosting the file. This file would be far less available than Cyrus's album. A user attempting to download this album would only be able to download the resource when at least one peer was active.\cite{Everyware}
-
-\paragraph{}
-If a user wanted to obtain a copy of the academic paper ``Supporting Activity in Desktop and Ubiquitous Computing''. It is unlikely that there would be a peer actively hosting this file. A Pirate Bay search revealed no results for this resource at this time.
-This illustrates just one problem of availability in P2P networks. Niche resources like academic journals are better hosted on a server. Real world institutions can't function based on what's popular. 
-
-\paragraph{}
-One important thing to note is that when a user downloads ``Everyware, The Dawning Age of Ubiquitous Computing'' they increase the availability of the resource. If they choose to host the files then there would be 4 peers for the next user to download from. The availability of a resource increases in proportion to the nodes in the system with that resource.
-
-\paragraph{}
-P2P is also extremely fault tolerant if the network is big enough. If a cup of coffee spills over one of the nodes in the Miley Cyrus network the downloading peers are unlikely to notice a performance difference.
+P2P is also extremely fault tolerant if the network is big enough. If a cup of coffee spills over one of the nodes in a large network the downloading peers are unlikely to notice a performance difference.
 P2P is at it's most fault tolerant when it is completely decentralised and has no reliance on centralised trackers.
 
 \paragraph{}
@@ -175,13 +157,13 @@ P2P networks are highly scalable as a result of all of the above since an increa
 
 \subsection{Security}
 \paragraph{}
-All software systems that are networked have similar vulnerabilities. The network connection can be eavesdropped on. Data stored can be accessed without permission. It is considered good practice to encrypt any sensitive data that is transferred or stored.
+All software systems that are networked have similar vulnerabilities. The network connection can be eavesdropped on. Data stored can be accessed without permission. It is considered a best practice to encrypt any sensitive data that is transferred or stored.
 \paragraph{}
-One of the most common attacks on a server is a denial of service attack. An attacker floods a resource with requests to make the resource unavailable for others.\cite{DistSys} One of the advantages of Client Server architectures is that once a security risk is identified it can be fixed for the whole system by a system administrator. This is in contrast to P2P where software must be updated on a huge number of machines by a huge number of owners.
+One of the most common attacks on a server is a denial of service attack. An attacker floods a resource with requests to make the resource unavailable for others.\cite{DistSys} One of the advantages of Client Server architectures is that once a security risk is identified it can be fixed for the whole system by a system administrator. This is in contrast to P2P which can't be attacked by a denial of service but where if there is a problem software must be updated on a huge number of machines by a huge number of owners.
 \paragraph{}
-One of the main methods of attacking a peer-to-peer network is to have multiple nodes conspiring against the other nodes in the system. In the case of bit coin the only way to achieve this is to have more that half of the nodes behaving maliciously.\cite{bitcoin} In order to make this happen the attacker would need access to a number of hosts beyond the budget of any hacker. One strategy for attacking a P2P network using conspiring nodes is to provide false information to other nodes in the network.
+One of the main methods of attacking a peer-to-peer network is to have multiple nodes conspiring against the other nodes in the system. In the case of bitcoin the only way to achieve this is to have more that half of the nodes behaving maliciously.\cite{bitcoin} In order to make this happen the attacker would need access to a number of hosts beyond the budget of any hacker. One strategy for attacking a P2P network using conspiring nodes is to provide false information to other nodes in the network.
 \paragraph{}
-An obvious security issue in P2P systems is the code to be run has access to the filesystem of a user. In the case of systems that share files like BitTorrent users need to know that they can trust the code of the torrent client they use. In a more complicated p2p system where users could contribute arbitrary code there would need to be mechanisms in place to protect the system from this code.
+An obvious security issue in P2P systems is the P2P application code has access to the filesystem of a user. In the case of systems that share files like BitTorrent users need to know that they can trust the code of the torrent client they use. In a more complicated P2P system where users could contribute arbitrary code to be run there would need to be mechanisms in place to protect the system from this code.
 
 \section{Social and Political Issues}
 
@@ -197,14 +179,11 @@ Even if this is the case, companies may have to obey the laws of their home coun
 \paragraph{}
 The client server model used in traditional web applications is far easier for governments to censor than peers to peer networks. Governments can force internet service providers to block IP addresses, redirect domain name requests to bad IP addresses or force a hosting company to remove a service from it's servers. This is the case in countries like China where the government's ``Great Firewall'' prevents Chinese netizens from accessing sites like Facebook, Google and Twitter. These services have come to be replaced by Chinese equivalents like Baidu, Renren and Sina Weibo. These sites are subject to heavy regulation from the Chinese government. 
 \paragraph{}
-In Ireland there is a certain amount of internet censorship. Eircom has been ordered to block sites associated with illegal file sharing such as The Pirate Bay.
-\paragraph{}
 The centralised nature of the client server model makes it easy for governments to censor applications built on it. One of the reasons for this is because it is easy to shutdown a system with a single point of failure.
 \paragraph{}
 One of the methods of bypassing such censorship is by leveraging the P2P model. In January 2014 The Pirate Bay announced that it was developing ``a browser-like client to circumvent censorship, including domain blocking, domain confiscation, IP-blocking.'' The software works like both a web browser and a BitTorrent client. Web application files that would usually be stored on a centralised server are instead shared among peers. The application has it's own DNS system in which it uses a fake DNS that links to a unique and verified public key.\cite{PirateBayBrowser}
 \paragraph{}
 Another example of a project that utilises the P2P model to bypass web censorship is the Freeweb project conceived by Shen, Liu and Zhao.\cite{FreeWeb} This model functions differently to the Pirate Bay system. In Freeweb nodes in regions not subject to censorship act as proxies for nodes in regions that are. 
-
 
 
 \subsection{Privacy, Spying and Hacking}
@@ -246,6 +225,8 @@ This application nicely illustrates the type of ubiquitous computing application
 
 %%IN PRESENTATION MAKE A JOKE ABOUT HOW THERES NO INTERFACE FOR THE IMMERSION
 
+%%THIS PROVIDES A CENTRALISED LOCATION WHERE A USER CAN EDIT THE INTERACTIONS BETWEEN MULTIPLE DEVICES THEY HAVE ACCESS TO
+
 \subsection{BitCoin}\cite{Bitcoin}
 \paragraph{}
 BitCoin is a digital currency that utilises the P2P architecture to remove the need for centralised institutions in order to conduct financial transactions online. E-Commerce has traditionally depended upon a trusted third party institution to guarantee transactions between parties. Using this third party incurs and additional cost in the transaction. BitCoin attempts to remove the need for this centralised bodies by using a complex P2P algorithm.
@@ -279,6 +260,23 @@ One example of such research is the TinyTorrents\cite{TinyTorrents} application 
 \end{itemize}
 \paragraph{}
 Another paper describes efficient P2P message communication in Wireless Sensor and Actor Networks (WSANs). In WSANs the sensors are static and actors move around collecting information from the sensors. Since there is poor communication between actors the paper presents methods for communication between the actors via the sensor network using P2P. The communication is made energy efficient by leveraging the fact actors typically visit parts of the network more than others.\cite{EMD}
+
+\subsection{Workpad Architecture}
+
+In the paper ``Pervasive Software Environments for Supporting Disaster Responses'' the authors discuss a system that has been developed in Italy to aid first responders. The architecture for this application makes use of both a peer-to-peer communication strategy and a client-server strategy. When first responders respond to an incident they each have their own local devices that they use to communicate with each other. These devices work together in order to form a peer to peer mobile ad-hoc network. This is essential in a situation such as an earthquake where vital resources for communication such as base stations may be damaged. A single node in the MANET acts as a bridge between the network and a backend system. The communication between a single MANET and it's associated back end system happens in a client server manner via the bridge. In the Workpad architecture the backend system is a federated group of backend systems that communicate in a peer to peer manner. These backend systems are typically the control rooms of different organisations e.g. fire departments, coast guard, hospitals. These systems act as peers provide ontologies which describe the data they share. An important function of the MANET is Adaptive Process Management; managing MANET task processing in the face of a changing network. An example function of Adaptive Process would be when one node moves out of range of the system a nearby node is instructed to follow him until he is in range of the network again.
+
+\subsection{Cloudlets}
+
+It looks like the client server model may be redefined in the near future with the development of ``Cloudlets''. One of the benefits of cloud computing is the ability for a device with limited computational power to send information to be processed  ``in the cloud''. Ubiquitous computing can certainly make use of this model. An example of this would be performing real time computer vision techniques on video captured from a mobile device. Most mobile devices would be incapable of performing the computation of such algorithms at an advanced level. Even if they were, the power consumption would deplete a large amount of the battery's energy. A solution would be to pass this processing to a server in the cloud, however, this solution brings with it another problem; the latency and low data throughput of a wide-area network. The wide-area network causes glitches and delays that are intolerable for a user. This latency is also unlikely to improve as over a WAN the data must be encrypted and pass through firewalls. This is the problem that Cloudlets seek to solve. 
+
+Cloudlets are described as a ``data center in a box''; like a cross between a Wifi hotspot and modern clouds. It is a server that provides computation for users on a LAN or WLAN. Cloudlets don't persist data locally, although they may send data on to a user's cloud account. According to researchers latency is improved since WLAN is typically two orders of magnitude faster than GSM. In order to implement cloudlets the researchers took a virtual machine based approach; each user has a virtual machine associated with them. One approach to implementing this would be to use VM migration where a VM is suspended and it's state transferred to another cloudlet. Another approach would be to dynamically synthesise a VM after receiving a VM overlay from a mobile device. 
+
+Cloudlets would make a huge number of difficult and interesting applications available to mobile devices. This might include intense graphics processing for realistic augmented reality, decision support systems or real time language translation from audio.
+
+
+\subsection{Smart Objects}
+
+\subsection{JXTA Overlay}
 
 \section{Conclusions}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.24)  21 OCT 2014 15:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.9.24)  17 NOV 2014 18:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -288,7 +288,7 @@ e
 File: images/Architectures.png Graphic file (type png)
 
 <use images/Architectures.png>
-Package pdftex.def Info: images/Architectures.png used on input line 47.
+Package pdftex.def Info: images/Architectures.png used on input line 43.
 (pdftex.def)             Requested size: 361.3491pt x 234.87692pt.
  [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2 <
 ./images/Architectures.png>] [3]
@@ -296,12 +296,12 @@ Package pdftex.def Info: images/Architectures.png used on input line 47.
 File: images/http_diagram.png Graphic file (type png)
 
 <use images/http_diagram.png>
-Package pdftex.def Info: images/http_diagram.png used on input line 101.
+Package pdftex.def Info: images/http_diagram.png used on input line 94.
 (pdftex.def)             Requested size: 377.30704pt x 301.42406pt.
 
 
 LaTeX Warning: Citation `http://probablycopyrighted.com/wp-content/uploads/http
-_diagram.png' on page 4 undefined on input line 101.
+_diagram.png' on page 4 undefined on input line 94.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -311,50 +311,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/file-sharing1.png Graphic file (type png)
 
 <use images/file-sharing1.png>
-Package pdftex.def Info: images/file-sharing1.png used on input line 108.
+Package pdftex.def Info: images/file-sharing1.png used on input line 101.
 (pdftex.def)             Requested size: 361.34665pt x 271.00998pt.
 
 
 LaTeX Warning: Citation `http://static.howstuffworks.com/gif/file-sharing1.gif'
- on page 5 undefined on input line 108.
+ on page 5 undefined on input line 101.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./images/http_diagram.png>] [6 <./images/file-sharing1.png>] [7]
 
-LaTeX Warning: Citation `bitcoin' on page 8 undefined on input line 182.
+LaTeX Warning: Citation `bitcoin' on page 8 undefined on input line 164.
 
-[8]
 
-LaTeX Warning: Citation `Forbes' on page 9 undefined on input line 194.
+LaTeX Warning: Citation `Forbes' on page 8 undefined on input line 176.
 
-[9]
+[8] [9]
 
-LaTeX Warning: Citation `IFTTT' on page 10 undefined on input line 236.
+LaTeX Warning: Citation `IFTTT' on page 10 undefined on input line 215.
 
-[10]
-./p2p-cs.tex:241: Misplaced alignment tab character &.
-l.241 ...Android device when I get to the office &
+./p2p-cs.tex:220: Misplaced alignment tab character &.
+l.220 ...Android device when I get to the office &
                                                    turn on vibrate''. Perhap...
 
 ? 
-<IFTTT.png, id=46, 328.22626pt x 295.1025pt>
+[10] <IFTTT.png, id=46, 328.22626pt x 295.1025pt>
 File: IFTTT.png Graphic file (type png)
  <use IFTTT.png>
-Package pdftex.def Info: IFTTT.png used on input line 245.
+Package pdftex.def Info: IFTTT.png used on input line 224.
 (pdftex.def)             Requested size: 328.22545pt x 295.10176pt.
 
 
-LaTeX Warning: Citation `Bitcoin' on page 11 undefined on input line 249.
+LaTeX Warning: Citation `Bitcoin' on page 11 undefined on input line 230.
 
-[11 <./IFTTT.png>] <images/bitcoin.png, id=50, 256.96pt x 256.96pt>
+<images/bitcoin.png, id=47, 256.96pt x 256.96pt>
 File: images/bitcoin.png Graphic file (type png)
-
-<use images/bitcoin.png>
-Package pdftex.def Info: images/bitcoin.png used on input line 256.
+ <use images/bitcoin.png>
+Package pdftex.def Info: images/bitcoin.png used on input line 237.
 (pdftex.def)             Requested size: 128.47968pt x 128.47968pt.
- [12 <./images/bitcoin.png>] (./p2p-cs.bbl
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11 <./IFTTT.png>] [12 <./images/bitcoin.png>] (./p2p-cs.bbl [13]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
@@ -388,7 +388,6 @@ Underfull \hbox (badness 6944) in paragraph at lines 67--72
 -[]for-[]good-[]140105/$\OT1/cmr/m/n/9 . Ac-cessed: 18-10-
  []
 
-[13]
 Missing character: There is no Ã in font cmr9!
 Missing character: There is no – in font cmr9!
 ) [14] (./p2p-cs.aux)
@@ -399,11 +398,11 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  3237 strings out of 493117
  43181 string characters out of 6135433
- 115622 words of memory out of 5000000
+ 116622 words of memory out of 5000000
  6491 multiletter control sequences out of 15000+600000
  11599 words of font info for 45 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 37i,5n,32p,919b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,5n,32p,1538b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
@@ -412,7 +411,7 @@ r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/l
 ocal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/lo
 cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/loca
 l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on p2p-cs.pdf (14 pages, 576830 bytes).
+Output written on p2p-cs.pdf (14 pages, 579923 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream
