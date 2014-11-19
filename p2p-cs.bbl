@@ -13,17 +13,21 @@ Cisco.
   \url{http://www.cisco.com/c/en/us/solutions/collateral/service-provider/ip-ngn-ip-next-generation-network/white_paper_c11-481360.html}.
 \newblock Accessed: 15-10-2014.
 
-\bibitem{ClientServer}
-TechSoup.
-\newblock Client server.
-\newblock
-  \url{http://www.ictknowledgebase.org.uk/uploads/RTEmagicC_clientserver.gif.gif}.
-\newblock Accessed: 15-10-2014.
+\bibitem{DistSys}
+George Coulouris, Jean Dollimore, Tim Kindberg, and Gordon Blair.
+\newblock Distributed systems, concepts and design, fifth edition.
 
-\bibitem{PeerToPeer}
-TechSoup.
-\newblock Peer to peer networks.
-\newblock \url{http://www.ictknowledgebase.org.uk/peertopeernetworks}.
+\bibitem{eberspacher20055}
+J{\"o}rg Ebersp{\"a}cher and R{\"u}diger Schollmeier.
+\newblock 5. first and second generation of peer-to-peer systems.
+\newblock In {\em Peer-to-Peer Systems and Applications}, pages 35--56.
+  Springer, 2005.
+
+\bibitem{http_diagram}
+probablycopyrighted.com.
+\newblock Http diagram.
+\newblock
+  \url{http://probablycopyrighted.com/wp-content/uploads/http_diagram.png}.
 \newblock Accessed: 15-10-2014.
 
 \bibitem{GnutellaCase}
@@ -32,6 +36,12 @@ Matei Ripeanu.
   systems and implications for system design.
 \newblock {\em Peer-to-Peer Computing, 2001. Proceedings. First International
   Conference on}, pages 99 -- 100, August 2001.
+
+\bibitem{howstuffworks}
+howstuffworks.com.
+\newblock P2p diagram.
+\newblock \url{http://static.howstuffworks.com/gif/file-sharing1.gif}.
+\newblock Accessed: 15-10-2014.
 
 \bibitem{Bittorrent}
 Bram Cohen.
@@ -45,22 +55,17 @@ Various.
 \newblock \url{https://wiki.theory.org/BitTorrentSpecification}.
 \newblock Accessed: 15-10-2014.
 
-\bibitem{DistSys}
-George Coulouris, Jean Dollimore, Tim Kindberg, and Gordon Blair.
-\newblock Distributed systems, concepts and design, fifth edition.
-
-\bibitem{Miley}
-The~Pirate Bay.
-\newblock Miley cyrus, bangerz.
-\newblock
-  \url{http://thepiratebay.se/torrent/8996596/Miley_Cyrus_-_Bangerz_(Deluxe_Version)__2013-Album_}.
+\bibitem{bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock \url{http://www.bitcoin.org}.
 \newblock Accessed: 15-10-2014.
 
-\bibitem{Everyware}
-The~Pirate Bay.
-\newblock Everyware, the dawning age of ubiquitous computing.
+\bibitem{Forbes}
+Patrick Baillie.
+\newblock Can european firms legally use u.s. clouds to store data?
 \newblock
-  \url{http://thepiratebay.se/torrent/4506989/Everyware__The_Dawning_Age_of_Ubiquitous_Computing}.
+  \url{http://www.forbes.com/sites/ciocentral/2012/01/02/can-european-firms-legally-use-u-s-clouds-to-store-data/}.
 \newblock Accessed: 15-10-2014.
 
 \bibitem{PirateBayBrowser}
@@ -82,6 +87,20 @@ Daniel Hughes, Geoff Coulson, and James Walkerdine.
 \newblock Free riding on gnutella revisited: The bell tolls?
 \newblock {\em IEEE DISTRIBUTED SYSTEMS ONLINE}, June 2005.
 
+\bibitem{satyanarayanan2011mobile}
+Mahadev Satyanarayanan.
+\newblock Mobile computing: the next decade.
+\newblock {\em ACM SIGMOBILE Mobile Computing and Communications Review},
+  15(2):2--10, 2011.
+
+\bibitem{apple}
+9to5mac.
+\newblock ios 8 uses peer-to-peer connections for airplay to apple tv, no
+  longer needs a network.
+\newblock
+  \url{http://9to5mac.com/2014/06/03/ios-8-uses-peer-to-peer-connections-for-airplay-to-apple-tv-no-longer-needs-a-network/}.
+\newblock Accessed: 10-11-2014.
+
 \bibitem{DesignSpace}
 KAY RÖMER and FRIEDEMANN MATTERN.
 \newblock The design space of wireless sensor networks.
@@ -101,5 +120,28 @@ Shibo He, Xu~Li, Jiming Chen, Peng Cheng, Youxian Sun, and David Simplot-Ryl.
   wireless sensor and actor networks.
 \newblock {\em IEEE JOURNAL ON SELECTED AREAS IN COMMUNICATIONS/SUPPLEMENT,
   VOL. 31, NO. 9}, SEPTEMBER 2013.
+
+\bibitem{kortuem2010smart}
+Gerd Kortuem, Fahim Kawsar, Daniel Fitton, and Vasughi Sundramoorthy.
+\newblock Smart objects as building blocks for the internet of things.
+\newblock {\em Internet Computing, IEEE}, 14(1):44--51, 2010.
+
+\bibitem{IFTTT}
+ifttt.com.
+\newblock Ifttt.
+\newblock \url{https://ifttt.com/wtf}.
+\newblock Accessed: 18-11-2014.
+
+\bibitem{catarci2008pervasive}
+Tiziana Catarci, Massimiliano de~Leoni, Andrea Marrella, Massimo Mecella,
+  Berardino Salvatore, Guido Vetere, Schahram Dustdar, Lukasz Juszczyk, Atif
+  Manzoor, and Hong-Linh Truong.
+\newblock Pervasive software environments for supporting disaster responses.
+\newblock {\em Internet Computing, IEEE}, 12(1):26--37, 2008.
+
+\bibitem{satyanarayanan2009case}
+Mahadev Satyanarayanan, Paramvir Bahl, Ram{\'o}n Caceres, and Nigel Davies.
+\newblock The case for vm-based cloudlets in mobile computing.
+\newblock {\em Pervasive Computing, IEEE}, 8(4):14--23, 2009.
 
 \end{thebibliography}

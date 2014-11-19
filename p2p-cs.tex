@@ -38,9 +38,9 @@ Fixed web and data, mostly client-server services currently account for 5,625 Pe
 
 P2P and Client-Server are not restricted to being independent of one another. In fact, companies such as Spotify and Skype use a hybrid approach. The advantages of hybrid architectures should be evident in the description of the architectures later. The view taken in this paper is that neither is better than the other; the suitability of the architecture depends on the application. Many ubicomp applications will benefit from a mix of both architectures.
 
-\section{The Architectures}
+\section{The Architectures\cite{DistSys}}
 
-\includegraphics[scale=.5]{Architectures}\cite{DistSys}
+\includegraphics[scale=.5]{Architectures}\cite{eberspacher20055}
 
 \subsection{Client-Server}
 
@@ -67,20 +67,18 @@ In the Peer-to-Peer devices communicate directly and intermittently. The devices
 \paragraph{}
 A P2P architecture is `self-scalable'. While the addition of an extra peer increases the workload of the system by increasing the number of requests the additional peer also increases the ability to handle that workload by providing the service to other peers. Securing P2P applications can be difficult due to their open and distributed nature.
 \paragraph{}
-P2P can be broken down further into four subcategories of architecture; centralised, decentralised, hybrid P2P and DHT based.
+P2P can be broken down further into four subcategories of architecture; centralised, decentralised, hybrid P2P and structured P2P.
 \paragraph{}
 An example of centralised P2P would be BitTorrent. In order to communicate with peers in the network a client must obtain information about the peers from a centralised server known as a tracker. Information about a tracker is obtained from a metadata file. A user needs to visit centralised server such as The Pirate Bay or Kick Ass Torrents in order to obtain this file. This dependence on a centralised server to track the network is what defines BitTorrent as centralised P2P.
 \paragraph{}
 In a decentralised or pure P2P Architecture each peer acts as an indexed server. It also acts like a router by relaying queries between peers. An example of this would be BitCoin or Gnutella 0.4.
 \paragraph{}
 In hybrid P2P hosts with a good internet connection act as routers for other peers in the network who's connection isn't as strong. An example of this is Gnutella 0.6.
-
-%ELABORATE HERE 
 \paragraph{}
-Peer-to-peer systems are most effective at storing large amounts of immutable data. They perform less well at storing mutable data.
-%%% from distributed computing book
+In structured P2P a hash table is distributed among the nodes in the system in order to index the information stored at each node. 
+\paragraph{}
+Peer-to-peer systems are most effective at storing large amounts of immutable data. They perform less well at storing mutable data since there needs to be a mechanism in place to allow updates to propagate across the network.
 
-%%% Look at this: http://medianet.kent.edu/surveys/IAD06S-P2PArchitectures-chibuike/P2P%20App.%20Survey%20Paper.htm
 \section{Example Protocols}
 
 A protocol is an agreed method of communicating between applications. The protocols outlined below provide details of how current technologies using the architectures outlined above communicate. While these particular protocols may not be directly applicable to Ubicomp directly they provide a useful outline of how the architectures need to work in reality. Designers of Ubicomp systems are likely to encounter similar problems that system designers have encountered in the past. These protocols outline methods for overcoming these problems. An outline of these protocols will be useful in reasoning about the architectures as applied to Ubicomp systems later.
@@ -91,14 +89,14 @@ The client-server architecture is the typical architecture used in web applicati
 \paragraph{}
 If nodes wish to collaborate with each other or obtain realtime information about other nodes in the system they must ``poll'' the server by repeatedly sending requests to the sever. This is very inefficient as it results in significant network overhead and results in the server processing requests even when the state of the system remains unchanged. A solution for this problem has recently emerged the the standard of web sockets which allows servers and web browsers to set up a dedicated end to end bidirectional connection.
 \paragraph{}
-\includegraphics[scale=.7]{http_diagram}\cite{http://probablycopyrighted.com/wp-content/uploads/http_diagram.png}
+\includegraphics[scale=.7]{http_diagram}\cite{http_diagram}
 
 \subsection{Gnutella 0.4}\cite{GnutellaCase}
 \paragraph{}
 Gnutella was the first large scale decentralised P2P network of it's kind. It ``builds at the application layer a virtual routing mechanism.''\cite{GnutellaCase} Early versions of Gnutella were truly decentralised P2P networks. No centralised servers were needed to facilitate the transfer of files from node to node.
 One of the implications of not using centralised servers in a P2P application is the challenge of keeping track of network nodes and what resources are available in the network. In order to obtain this information ``network flooding'' was used. Peers all maintain at least one TCP connection to other nodes in the system. The network flooding algorithm ``floods'' the network with requests; each node sends messages on to all of it's neighbours except the one it received the message from. 
 \paragraph{}
-\includegraphics[scale=.9]{file-sharing1}\cite{http://static.howstuffworks.com/gif/file-sharing1.gif}
+\includegraphics[scale=.9]{file-sharing1}\cite{howstuffworks}
 
 \subsection{Gnutella 0.6}\cite{GnutellaCase}
 \paragraph{}
@@ -209,44 +207,11 @@ The choice of network architecture impacts the development of technology. A prim
 \paragraph{}
 This can be contrasted with Wireless Sensor Networks. Currently sensors, particularly on the nano scale have little processing power or memory. It is possible to store other sensors information and network in a P2P fashion. However, these sensors aren't cheap and there are issues with the technologies such as power consumption.
 \paragraph{}
+In the paper ``Mobile Computing: the Next Decade'' Mahadev Satyanarayanan outlined some scenarios that may be brought about by mobile and ubiquitous computing and reflected upon them. He detailed how if a child became lost at a crowded event attendees could upload photos to a centralised server to be analysed by police. In another situation he described how context awareness through computer vision could help someone who requires cognitive assistance.\cite{satyanarayanan2011mobile}
+\paragraph{}
+It seems one of his predictions has already come true. He gives the example of a doctor in a hotel who receives medical images on her phone, the screen of which is too small to display the image. The doctor uses a screen in the lobby which her phone can communicate with directly in a peer to peer manner to display the image. The devices don't need an intermediate network to communicate. This direct P2P communication has been realised recently with Airplay for Apple TV and iOS8. The mobile device can communicate directly via WiFi-Direct with the TV instead of relying on the WLAN to relay the message.\cite{apple}
+\paragraph{}
 What follows is a collection of interesting technologies. Some of the technologies have been included as they illustrate the advantages of a particular network architecture over another. Others have been chosen because they have direct applications in Ubicomp or are part of the emerging research in the area.
-
-
-\subsection{IFTTT}\cite{IFTTT}
-\paragraph{}
-If This Then That (IFTTT) is a web application that allows users to link web services together in ``recipes''. It allows people with no programming experience to construct conditional statements using powerful Web APIs. 
-IFTTT allows a user to coordinate actions across many popular web applications such as Twitter, Dropbox, Evernote, Linkedin etc. The user can also set actions based on conditions of their device. In the simplest sense a ``recipe'' can be defined as a conditional statement and a corresponding action. If a condition is true in one system then take an action defined in another. Users can share these recipes with other users.
-\paragraph{}
-Users can define an response based on the location of their android phone. This allows them to define the kind of context aware actions that would be typical in Ubicomp. At the time of writing the eighth most popular recipe on the site is ``Mute my Android device when I get to the office & turn on vibrate''. Perhaps even more impressive is the recipe that takes advantage of Philips Hue to ``Turn on your lights when you're near home''.
-\paragraph{}
-This application nicely illustrates the type of ubiquitous computing applications that the client server model is suited for. Having one centralised computer (in this case a server) coordinating actions across multiple devices is a design pattern likely to arise in the development of Ubicomp systems. It is particularly suited to coordinating actions in one device many users situations; for example many users sharing one the same lights in a house.
-\paragraph{}
-\includegraphics[scale=1]{IFTTT}
-
-%%IN PRESENTATION MAKE A JOKE ABOUT HOW THERES NO INTERFACE FOR THE IMMERSION
-
-%%THIS PROVIDES A CENTRALISED LOCATION WHERE A USER CAN EDIT THE INTERACTIONS BETWEEN MULTIPLE DEVICES THEY HAVE ACCESS TO
-
-\subsection{BitCoin}\cite{Bitcoin}
-\paragraph{}
-BitCoin is a digital currency that utilises the P2P architecture to remove the need for centralised institutions in order to conduct financial transactions online. E-Commerce has traditionally depended upon a trusted third party institution to guarantee transactions between parties. Using this third party incurs and additional cost in the transaction. BitCoin attempts to remove the need for this centralised bodies by using a complex P2P algorithm.
-\paragraph{}
-Every node in the network maintains a copy of the public ledger of bit coin transactions known as the Block Chain. Nodes in the network ``mine'' bitcoins by computing cryptographic hashes in order to validate and record the transactions of other BitCoin users. It may take some time before BitCoin and other crypto-currencies are widely adopted. Currently it's value is highly volatile so it will be difficult for mainstream users to trust.
-\paragraph{}
-BitCoin illustrates how functionality typically thought only possible in client server architectures can be produced in a P2P network by using advanced computing techniques.
-\includegraphics[scale=.5]{bitcoin}
-
-%\subsection{iTunes, Spotify and BitTorrent Bundle}
-%\paragraph{}
-%iTunes came to fill the online music distribution void left after Napster was shut down back in 2001. 
-%Attempts are being made to leverage the technology behind bittorrent to put more power into the hands of artists. "Tomorrow's Modern Boxes" by Thom Yorke was released on the 26th of September 2014. It was the first paygated BitTorrent bundle. (Yorkes band ``Radiohead'' gave their album``In Rainbows'' away essentially for free back in 2007. U2 did a similar thing recently via iTunes that was met with mixed reviews.)
-
-%\subsection{BitTorrent Synch and Dropbox}
-
-%Alternative to cloud synchronisation.
-
-%http://arxiv.org/pdf/1205.3231.pdf
-%Data mining is far more difficult in P2P than client server. By keeping data on a central server it's far easier to analyse that data. This is the thinking behind data warehousing; Store all of the data at a central location and analyse it there. However this may not be feasable given the amount of data we are collecting. This has given rise to the research area of Distributed Data Mining.
 
 \subsection{Wireless Sensor Networks}
 \paragraph{}
@@ -260,27 +225,46 @@ One example of such research is the TinyTorrents\cite{TinyTorrents} application 
 \end{itemize}
 \paragraph{}
 Another paper describes efficient P2P message communication in Wireless Sensor and Actor Networks (WSANs). In WSANs the sensors are static and actors move around collecting information from the sensors. Since there is poor communication between actors the paper presents methods for communication between the actors via the sensor network using P2P. The communication is made energy efficient by leveraging the fact actors typically visit parts of the network more than others.\cite{EMD}
-
-\subsection{Workpad Architecture}
-
-In the paper ``Pervasive Software Environments for Supporting Disaster Responses'' the authors discuss a system that has been developed in Italy to aid first responders. The architecture for this application makes use of both a peer-to-peer communication strategy and a client-server strategy. When first responders respond to an incident they each have their own local devices that they use to communicate with each other. These devices work together in order to form a peer to peer mobile ad-hoc network. This is essential in a situation such as an earthquake where vital resources for communication such as base stations may be damaged. A single node in the MANET acts as a bridge between the network and a backend system. The communication between a single MANET and it's associated back end system happens in a client server manner via the bridge. In the Workpad architecture the backend system is a federated group of backend systems that communicate in a peer to peer manner. These backend systems are typically the control rooms of different organisations e.g. fire departments, coast guard, hospitals. These systems act as peers provide ontologies which describe the data they share. An important function of the MANET is Adaptive Process Management; managing MANET task processing in the face of a changing network. An example function of Adaptive Process would be when one node moves out of range of the system a nearby node is instructed to follow him until he is in range of the network again.
-
-\subsection{Cloudlets}
-
-It looks like the client server model may be redefined in the near future with the development of ``Cloudlets''. One of the benefits of cloud computing is the ability for a device with limited computational power to send information to be processed  ``in the cloud''. Ubiquitous computing can certainly make use of this model. An example of this would be performing real time computer vision techniques on video captured from a mobile device. Most mobile devices would be incapable of performing the computation of such algorithms at an advanced level. Even if they were, the power consumption would deplete a large amount of the battery's energy. A solution would be to pass this processing to a server in the cloud, however, this solution brings with it another problem; the latency and low data throughput of a wide-area network. The wide-area network causes glitches and delays that are intolerable for a user. This latency is also unlikely to improve as over a WAN the data must be encrypted and pass through firewalls. This is the problem that Cloudlets seek to solve. 
-
-Cloudlets are described as a ``data center in a box''; like a cross between a Wifi hotspot and modern clouds. It is a server that provides computation for users on a LAN or WLAN. Cloudlets don't persist data locally, although they may send data on to a user's cloud account. According to researchers latency is improved since WLAN is typically two orders of magnitude faster than GSM. In order to implement cloudlets the researchers took a virtual machine based approach; each user has a virtual machine associated with them. One approach to implementing this would be to use VM migration where a VM is suspended and it's state transferred to another cloudlet. Another approach would be to dynamically synthesise a VM after receiving a VM overlay from a mobile device. 
-
-Cloudlets would make a huge number of difficult and interesting applications available to mobile devices. This might include intense graphics processing for realistic augmented reality, decision support systems or real time language translation from audio.
-
-
 \subsection{Smart Objects}
+\paragraph{}
+An important aspect in the development of Ubicomp and the internet of things is the idea of smart objects; objects are context aware. In order to leverage the full potential of smart objects the devices need to communicate with other devices in the network. This needs to be done in an adhoc way and the best way to do this is in a peer to peer fashion. A key research area for this communication is in the dynamic ad hoc composition of models. This concerns combining the application logic of individual nodes into a coherent application model. It also involves peer to peer reasoning algorithms so the nodes can intelligently cooperate.\cite{kortuem2010smart}
+\paragraph{}
+\subsection{BitCoin}\cite{bitcoin}
+\paragraph{}
+BitCoin is a digital currency that utilises the P2P architecture to remove the need for centralised institutions in order to conduct financial transactions online. E-Commerce has traditionally depended upon a trusted third party institution to guarantee transactions between parties. Using this third party incurs and additional cost in the transaction. BitCoin attempts to remove the need for this centralised body by using a complex P2P algorithm.
+\paragraph{}
+Every node in the network maintains a copy of the public ledger of bit coin transactions known as the Block Chain. Nodes in the network ``mine'' bitcoins by computing cryptographic hashes in order to validate and record the transactions of other BitCoin users. It may take some time before BitCoin and other crypto-currencies are widely adopted. Currently it's value is highly volatile so it will be difficult for mainstream users to trust.
+\paragraph{}
+BitCoin illustrates how functionality typically thought only possible in client-server architectures can be produced in a P2P network by using advanced computing techniques.
+\paragraph{}
 
-\subsection{JXTA Overlay}
+\subsection{IFTTT}\cite{IFTTT}
+\paragraph{}
+If This Then That (IFTTT) is a web application that allows users to link web services together in ``recipes''. It allows people with no programming experience to construct conditional statements using powerful Web APIs. 
+IFTTT allows a user to coordinate actions across many popular web applications such as Twitter, Dropbox, Evernote, Linkedin etc. The user can also set actions based on conditions of their device. In the simplest sense a ``recipe'' can be defined as a conditional statement and a corresponding action. If a condition is true in one system then take an action defined in another. Users can share these recipes with other users.
+\paragraph{}
+Users can define an response based on the location of their android phone. This allows them to define the kind of context aware actions that would be typical in Ubicomp. At the time of writing the eighth most popular recipe on the site is ``Mute my Android device when I get to the office & turn on vibrate.'' Perhaps even more impressive is the recipe that takes advantage of Philips Hue to ``Turn on your lights when you're near home''.
+\paragraph{}
+This application nicely illustrates the type of ubiquitous computing applications that the client server model is suited for. Having one centralised computer (in this case a server) coordinating actions across multiple devices is a design pattern likely to arise in the development of Ubicomp systems. It is particularly suited to coordinating actions in one device many users situations; for example many users sharing one the same lights in a house.
+\paragraph{}
+\includegraphics[scale=1]{IFTTT}
+
+\subsection{Workpad Architecture}\cite{catarci2008pervasive}
+\paragraph{}
+In the paper ``Pervasive Software Environments for Supporting Disaster Responses'' the authors discuss a system that has been developed in Italy to aid first responders. The architecture for this application makes use of both a peer-to-peer communication strategy and a client-server strategy. When first responders respond to an incident they each have their own local devices that they use to communicate with each other. These devices work together in order to form a peer to peer mobile ad-hoc network. This is essential in a situation such as an earthquake where vital resources for communication such as base stations may be damaged. A single node in the MANET acts as a bridge between the network and a backend system. The communication between a single MANET and it's associated back end system happens in a client server manner via the bridge. In the Workpad architecture the backend system is a federated group of backend systems that communicate in a peer to peer manner. These backend systems are typically the control rooms of different organisations e.g. fire departments, coast guard, hospitals. These systems act as peers provide ontologies which describe the data they share. An important function of the MANET is Adaptive Process Management; managing MANET task processing in the face of a changing network. An example function of Adaptive Process would be when one node moves out of range of the system a nearby node is instructed to follow him until he is in range of the network again.
+\paragraph{}
+\subsection{Cloudlets}\cite{satyanarayanan2009case}
+\paragraph{}
+It looks like the client server model may be redefined in the near future with the development of ``Cloudlets''. One of the benefits of cloud computing is the ability for a device with limited computational power to send information to be processed  ``in the cloud''. Ubiquitous computing can certainly make use of this model. An example of this would be performing real time computer vision techniques on video captured from a mobile device. Most mobile devices would be incapable of performing the computation of such algorithms at an advanced level. Even if they were, the power consumption would deplete a large amount of the battery's energy. A solution would be to pass this processing to a server in the cloud, however, this solution brings with it another problem; the latency and low data throughput of a wide-area network. The wide-area network causes glitches and delays that are intolerable for a user. This latency is also unlikely to improve as over a WAN the data must be encrypted and pass through firewalls. This is the problem that Cloudlets seek to solve. 
+\paragraph{}
+Cloudlets are described as a ``data center in a box''; like a cross between a Wifi hotspot and modern clouds. It is a server that provides computation for users on a LAN or WLAN. Cloudlets don't persist data locally, although they may send data on to a user's cloud account. According to researchers latency is improved since WLAN is typically two orders of magnitude faster than GSM. In order to implement cloudlets the researchers took a virtual machine based approach; each user has a virtual machine associated with them. One approach to implementing this would be to use VM migration where a VM is suspended and it's state transferred to another cloudlet. Another approach would be to dynamically synthesise a VM after receiving a VM overlay from a mobile device. 
+\paragraph{}
+Cloudlets would make a huge number of difficult and interesting applications available to mobile devices. This might include intense graphics processing for realistic augmented reality, decision support systems or real time language translation from audio.
+\paragraph{}
 
 \section{Conclusions}
-
-The purpose of this paper was to compare the Client-Server and Peer-to-Peer architectures. By exploring the topic from several different points of view it seems obvious that each architecture has both strengths and weaknesses. It is difficult to say that one is truly better than the other. Client-Server applications have many advantages from a business point of view as they are easier to develop, analyse and maintain. Peer-to-Peer applications can be incredibly robust and efficient if designed correctly. With the wide variety of applications that Ubiquitous Computing encompasses it is likely that both architectures have their uses. Some applications will benefit more from one than the other and some will benefit from a hybrid of both. It will be interesting to see in the coming years the challenges developing ubicomp applications will present and how system designers react to these challenges.
+\paragraph{}
+The purpose of this paper was to compare the Client-Server and Peer-to-Peer architectures. By exploring the topic from several different points of view it seems obvious that each architecture has both strengths and weaknesses. It is difficult to say that one is truly better than the other. Client-Server applications have many advantages from a business point of view as they are easier to develop, analyse and maintain. Peer-to-Peer applications can be incredibly robust and efficient if designed correctly. With the wide variety of applications that Ubiquitous Computing encompasses it is likely that both architectures have their uses. Some applications will benefit more from one than the other and some will benefit from a hybrid of both. This paper has outlined some technologies that already benefit by making use of both architectures. It will be interesting to see in the coming years the challenges developing ubicomp applications will present and how system designers react to these challenges. 
 \bibliographystyle{unsrt}
 \bibliography{p2p-cs}
 
